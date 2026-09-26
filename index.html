@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Career | Build Your Future</title>
+
+    <meta name="description"
+          content="My Career - A modern career and professional networking platform founded by Siddhi Bhintade.">
+    <meta name="author" content="Siddhi Bhintade">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
+
+<header class="topbar">
+
+    <div class="brand" onclick="showPage('home')">
+        <div class="brand-logo">MC</div>
+
+        <div>
+            <div class="brand-name">My Career</div>
+            <small>Build • Connect • Grow</small>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+            type="text"
+            id="globalSearch"
+            placeholder="Search people, jobs, skills..."
+            oninput="globalSearch()">
+    </div>
+
+    <nav class="main-nav">
+
+        <button class="nav-item active" data-page="home" onclick="showPage('home')">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-page="network" onclick="showPage('network')">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Network</span>
+        </button>
+
+        <button class="nav-item" data-page="jobs" onclick="showPage('jobs')">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Jobs</span>
+        </button>
+
+        <button class="nav-item" data-page="learning" onclick="showPage('learning')">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Learning</span>
+        </button>
+
+        <button class="nav-item" data-page="ai" onclick="showPage('ai')">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Guide</span>
+        </button>
+
+        <button class="nav-item" data-page="profile" onclick="showPage('profile')">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </button>
+
+    </nav>
+
+    <div class="top-actions">
+
+        <button class="icon-btn" onclick="toggleNotifications()" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notification-dot"></span>
+        </button>
+
+        <button class="icon-btn" onclick="toggleTheme()" title="Dark mode">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <button class="profile-mini" onclick="showPage('profile')">
+            <div class="avatar small-avatar">SB</div>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NOTIFICATION PANEL
+========================= -->
+
+<div class="notification-panel" id="notificationPanel">
+
+    <div class="panel-header">
+        <strong>Notifications</strong>
+        <button onclick="toggleNotifications()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon blue">
+            <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <div>
+            <strong>New internship match</strong>
+            <p>Frontend Developer internship matches your skills.</p>
+            <small>10 min ago</small>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon green">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+        <div>
+            <strong>New connection</strong>
+            <p>Priya Sharma accepted your connection request.</p>
+            <small>1 hour ago</small>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <div class="notification-icon orange">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+        <div>
+            <strong>AI Career Tip</strong>
+            <p>Complete your profile to improve job matching.</p>
+            <small>2 hours ago</small>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN APPLICATION
+========================= -->
+
+<main>
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<section id="home" class="page active-page">
+
+    <div class="dashboard-grid">
+
+        <!-- LEFT PROFILE CARD -->
+
+        <aside class="left-column">
+
+            <div class="card profile-card">
+
+                <div class="cover"></div>
+
+                <div class="profile-content">
+
+                    <div class="avatar profile-avatar">SB</div>
+
+                    <h2>Siddhi Bhintade</h2>
+
+                    <p class="muted">
+                        Computer Science & Business Systems Student
+                    </p>
+
+                    <p class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Pune, Maharashtra, India
+                    </p>
+
+                    <div class="profile-stats">
+
+                        <div>
+                            <strong>248</strong>
+                            <span>Connections</span>
+                        </div>
+
+                        <div>
+                            <strong>36</strong>
+                            <span>Profile views</span>
+                        </div>
+
+                    </div>
+
+                    <button class="outline-btn full-btn"
+                            onclick="showPage('profile')">
+                        View Profile
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="card quick-card">
+
+                <h3>Quick Access</h3>
+
+                <button onclick="showPage('jobs')">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Find Jobs
+                </button>
+
+                <button onclick="showPage('learning')">
+                    <i class="fa-solid fa-book-open"></i>
+                    Learning
+                </button>
+
+                <button onclick="showPage('ai')">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    AI Career Guide
+                </button>
+
+                <button onclick="showPage('resume')">
+                    <i class="fa-solid fa-file-lines"></i>
+                    Resume Builder
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CENTER FEED -->
+
+        <section class="center-column">
+
+            <!-- CREATE POST -->
+
+            <div class="card create-post">
+
+                <div class="create-row">
+
+                    <div class="avatar">SB</div>
+
+                    <button class="post-input"
+                            onclick="openPostModal()">
+                        Share something with your professional network...
+                    </button>
+
+                </div>
+
+                <div class="post-actions">
+
+                    <button onclick="openPostModal()">
+                        <i class="fa-solid fa-image"></i>
+                        Photo
+                    </button>
+
+                    <button onclick="openPostModal()">
+                        <i class="fa-solid fa-video"></i>
+                        Video
+                    </button>
+
+                    <button onclick="openPostModal()">
+                        <i class="fa-solid fa-pen"></i>
+                        Article
+                    </button>
+
+                    <button onclick="openPostModal()">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Opportunity
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- WELCOME BANNER -->
+
+            <div class="career-banner">
+
+                <div>
+
+                    <span class="banner-label">
+                        YOUR CAREER. YOUR FUTURE.
+                    </span>
+
+                    <h1>
+                        Build the career<br>
+                        you actually want.
+                    </h1>
+
+                    <p>
+                        Connect with professionals, discover opportunities,
+                        learn new skills and get AI-powered career guidance.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="showPage('ai')">
+                        <i class="fa-solid fa-robot"></i>
+                        Talk to AI Career Guide
+                    </button>
+
+                </div>
+
+                <div class="banner-art">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+
+            </div>
+
+
+            <!-- FEED POSTS -->
+
+            <div id="feedContainer">
+
+                <article class="card post">
+
+                    <div class="post-header">
+
+                        <div class="avatar">SB</div>
+
+                        <div class="post-author">
+
+                            <strong>Siddhi Bhintade</strong>
+
+                            <span>
+                                CSBS Student • Digital Marketing Intern
+                            </span>
+
+                            <small>2h • 🌐</small>
+
+                        </div>
+
+                        <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Excited to continue building my skills in
+                            technology, business and AI. 🚀
+                        </p>
+
+                        <p>
+                            My goal is simple: keep learning, keep building,
+                            and create projects that solve real problems.
+                        </p>
+
+                        <div class="hashtags">
+                            #MyCareer #StudentDeveloper #AI #Growth
+                        </div>
+
+                    </div>
+
+                    <div class="post-reactions">
+
+                        <span>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            42 reactions
+                        </span>
+
+                        <span>8 comments • 3 reposts</span>
+
+                    </div>
+
+                    <div class="post-buttons">
+
+                        <button onclick="likePost(this)">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            Like
+                        </button>
+
+                        <button>
+                            <i class="fa-regular fa-comment"></i>
+                            Comment
+                        </button>
+
+                        <button onclick="sharePost()">
+                            <i class="fa-solid fa-share"></i>
+                            Share
+                        </button>
+
+                        <button>
+                            <i class="fa-regular fa-paper-plane"></i>
+                            Send
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card post">
+
+                    <div class="post-header">
+
+                        <div class="avatar company-avatar">
+                            TC
+                        </div>
+
+                        <div class="post-author">
+
+                            <strong>Tech Careers India</strong>
+
+                            <span>Career Community</span>
+
+                            <small>5h • 🌐</small>
+
+                        </div>
+
+                        <button class="more-btn">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            💡 Career Tip of the Day
+                        </p>
+
+                        <p>
+                            Don't only collect certificates. Build projects,
+                            document your work and learn how to explain what
+                            you built.
+                        </p>
+
+                        <div class="tip-box">
+                            <strong>Project + Skills + Communication</strong>
+                            <span> = Stronger Career Profile</span>
+                        </div>
+
+                    </div>
+
+                    <div class="post-reactions">
+                        <span>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            127 reactions
+                        </span>
+                        <span>24 comments</span>
+                    </div>
+
+                    <div class="post-buttons">
+
+                        <button onclick="likePost(this)">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            Like
+                        </button>
+
+                        <button>
+                            <i class="fa-regular fa-comment"></i>
+                            Comment
+                        </button>
+
+                        <button onclick="sharePost()">
+                            <i class="fa-solid fa-share"></i>
+                            Share
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <aside class="right-column">
+
+            <div class="card career-score">
+
+                <div class="card-title-row">
+                    <h3>Career Profile</h3>
+                    <span class="info-icon">?</span>
+                </div>
+
+                <div class="score-circle">
+                    <div>
+                        <strong>78%</strong>
+                        <span>Complete</span>
+                    </div>
+                </div>
+
+                <p>
+                    Your profile is getting stronger.
+                    Complete these steps to improve it.
+                </p>
+
+                <div class="progress-line">
+                    <span style="width:78%"></span>
+                </div>
+
+                <button class="text-btn"
+                        onclick="showPage('profile')">
+                    Complete profile →
+                </button>
+
+            </div>
+
+
+            <div class="card trending">
+
+                <h3>Trending Skills</h3>
+
+                <div class="skill-trend">
+                    <span>1</span>
+                    <div>
+                        <strong>Artificial Intelligence</strong>
+                        <small>+24% this month</small>
+                    </div>
+                </div>
+
+                <div class="skill-trend">
+                    <span>2</span>
+                    <div>
+                        <strong>Python</strong>
+                        <small>+18% this month</small>
+                    </div>
+                </div>
+
+                <div class="skill-trend">
+                    <span>3</span>
+                    <div>
+                        <strong>Data Analytics</strong>
+                        <small>+15% this month</small>
+                    </div>
+                </div>
+
+                <div class="skill-trend">
+                    <span>4</span>
+                    <div>
+                        <strong>Digital Marketing</strong>
+                        <small>+12% this month</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="card suggested">
+
+                <h3>People You May Know</h3>
+
+                <div class="person">
+
+                    <div class="avatar purple">PS</div>
+
+                    <div>
+                        <strong>Priya Sharma</strong>
+                        <small>Data Analyst</small>
+                        <button class="connect-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="person">
+
+                    <div class="avatar orange">AM</div>
+
+                    <div>
+                        <strong>Aditya Mehta</strong>
+                        <small>Software Engineer</small>
+                        <button class="connect-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-mini">
+                <strong>My Career</strong>
+                <p>
+                    Founded by Siddhi Bhintade
+                </p>
+                <span>© 2026 My Career</span>
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NETWORK PAGE
+========================= -->
+
+<section id="network" class="page">
+
+    <div class="page-container">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="eyebrow">PROFESSIONAL NETWORK</span>
+                <h1>Grow your network</h1>
+                <p>
+                    Connect with students, professionals, founders and recruiters.
+                </p>
+            </div>
+
+            <button class="primary-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Find Connections
+            </button>
+
+        </div>
+
+        <div class="network-layout">
+
+            <div class="card network-main">
+
+                <div class="network-tabs">
+
+                    <button class="active">Discover</button>
+                    <button>Following</button>
+                    <button>Requests</button>
+
+                </div>
+
+                <div class="people-grid">
+
+                    <div class="person-card">
+
+                        <div class="person-cover"></div>
+
+                        <div class="avatar person-avatar">AR</div>
+
+                        <h3>Akash Rao</h3>
+
+                        <p>Full Stack Developer</p>
+
+                        <small>5 mutual connections</small>
+
+                        <button class="primary-btn full-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+
+                    </div>
+
+                    <div class="person-card">
+
+                        <div class="person-cover"></div>
+
+                        <div class="avatar person-avatar purple">NP</div>
+
+                        <h3>Neha Patil</h3>
+
+                        <p>Product Designer</p>
+
+                        <small>8 mutual connections</small>
+
+                        <button class="primary-btn full-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+
+                    </div>
+
+                    <div class="person-card">
+
+                        <div class="person-cover"></div>
+
+                        <div class="avatar person-avatar orange">RK</div>
+
+                        <h3>Rahul Kulkarni</h3>
+
+                        <p>AI Engineer</p>
+
+                        <small>3 mutual connections</small>
+
+                        <button class="primary-btn full-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+
+                    </div>
+
+                    <div class="person-card">
+
+                        <div class="person-cover"></div>
+
+                        <div class="avatar person-avatar green">AS</div>
+
+                        <h3>Ananya Shah</h3>
+
+                        <p>Marketing Specialist</p>
+
+                        <small>11 mutual connections</small>
+
+                        <button class="primary-btn full-btn"
+                                onclick="connectPerson(this)">
+                            Connect
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JOBS PAGE
+========================= -->
+
+<section id="jobs" class="page">
+
+    <div class="page-container">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="eyebrow">CAREER OPPORTUNITIES</span>
+                <h1>Find your next opportunity</h1>
+                <p>
+                    Search jobs, internships and graduate opportunities.
+                </p>
+            </div>
+
+            <button class="outline-btn"
+                    onclick="showToast('Recruiter mode coming soon!')">
+                <i class="fa-solid fa-building"></i>
+                I'm Hiring
+            </button>
+
+        </div>
+
+
+        <div class="job-search-card card">
+
+            <div class="job-search">
+
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        id="jobSearch"
+                        type="text"
+                        placeholder="Job title, skill or company"
+                        oninput="filterJobs()">
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input
+                        id="locationSearch"
+                        type="text"
+                        placeholder="Location">
+                </div>
+
+                <button class="primary-btn"
+                        onclick="filterJobs()">
+                    Search
+                </button>
+
+            </div>
+
+            <div class="job-filters">
+
+                <button class="filter active">All</button>
+                <button class="filter">Internship</button>
+                <button class="filter">Full Time</button>
+                <button class="filter">Remote</button>
+                <button class="filter">AI / ML</button>
+                <button class="filter">Marketing</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="jobs-layout">
+
+            <div id="jobsContainer">
+
+                <!-- JOB 1 -->
+
+                <article class="card job-card"
+                         data-title="Frontend Developer"
+                         data-location="Pune">
+
+                    <div class="company-logo">T</div>
+
+                    <div class="job-content">
+
+                        <div class="job-top">
+
+                            <div>
+
+                                <h2>Frontend Developer Intern</h2>
+
+                                <strong>TechNova Solutions</strong>
+
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Pune • Hybrid
+                                </p>
+
+                            </div>
+
+                            <button class="save-job"
+                                    onclick="saveJob(this)">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="job-tags">
+
+                            <span>Internship</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+
+                        </div>
+
+                        <p class="job-description">
+                            Work with the product team to build responsive
+                            interfaces and improve user experiences.
+                        </p>
+
+                        <div class="job-bottom">
+
+                            <small>
+                                <i class="fa-solid fa-clock"></i>
+                                Posted 2 days ago
+                            </small>
+
+                            <button class="primary-btn small-btn"
+                                    onclick="applyJob('Frontend Developer Intern')">
+                                Apply
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 2 -->
+
+                <article class="card job-card"
+                         data-title="Data Analyst"
+                         data-location="Mumbai">
+
+                    <div class="company-logo purple-logo">D</div>
+
+                    <div class="job-content">
+
+                        <div class="job-top">
+
+                            <div>
+
+                                <h2>Data Analyst Intern</h2>
+
+                                <strong>DataSphere</strong>
+
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Mumbai • Remote
+                                </p>
+
+                            </div>
+
+                            <button class="save-job"
+                                    onclick="saveJob(this)">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="job-tags">
+
+                            <span>Internship</span>
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Power BI</span>
+
+                        </div>
+
+                        <p class="job-description">
+                            Analyze business data and create dashboards
+                            that help teams make better decisions.
+                        </p>
+
+                        <div class="job-bottom">
+
+                            <small>
+                                <i class="fa-solid fa-clock"></i>
+                                Posted 4 days ago
+                            </small>
+
+                            <button class="primary-btn small-btn"
+                                    onclick="applyJob('Data Analyst Intern')">
+                                Apply
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 3 -->
+
+                <article class="card job-card"
+                         data-title="Digital Marketing Executive"
+                         data-location="Pune">
+
+                    <div class="company-logo orange-logo">M</div>
+
+                    <div class="job-content">
+
+                        <div class="job-top">
+
+                            <div>
+
+                                <h2>Digital Marketing Executive</h2>
+
+                                <strong>MarketEdge</strong>
+
+                                <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Pune • On-site
+                                </p>
+
+                            </div>
+
+                            <button class="save-job"
+                                    onclick="saveJob(this)">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="job-tags">
+
+                            <span>Full Time</span>
+                            <span>SEO</span>
+                            <span>Social Media</span>
+                            <span>Content</span>
+
+                        </div>
+
+                        <p class="job-description">
+                            Plan campaigns, analyze audience behavior and
+                            develop content strategies for growing brands.
+                        </p>
+
+                        <div class="job-bottom">
+
+                            <small>
+                                <i class="fa-solid fa-clock"></i>
+                                Posted 1 week ago
+                            </small>
+
+                            <button class="primary-btn small-btn"
+                                    onclick="applyJob('Digital Marketing Executive')">
+                                Apply
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- JOB SIDE -->
+
+            <aside>
+
+                <div class="card job-alert">
+
+                    <div class="alert-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <h3>Get job alerts</h3>
+
+                    <p>
+                        Receive notifications when opportunities
+                        matching your skills are posted.
+                    </p>
+
+                    <button class="outline-btn full-btn"
+                            onclick="showToast('Job alerts enabled!')">
+                        Enable Alerts
+                    </button>
+
+                </div>
+
+
+                <div class="card recommended-skills">
+
+                    <h3>Skills employers search</h3>
+
+                    <div class="skill-chip-list">
+
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>SQL</span>
+                        <span>AI</span>
+                        <span>Excel</span>
+                        <span>Communication</span>
+                        <span>Marketing</span>
+                        <span>Data Analytics</span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LEARNING PAGE
+========================= -->
+
+<section id="learning" class="page">
+
+    <div class="page-container">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="eyebrow">LEARN & GROW</span>
+                <h1>Career Learning Hub</h1>
+                <p>
+                    Build technical, business and professional skills.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="learning-stats">
+
+            <div class="stat-card card">
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <strong>12</strong>
+                <span>Courses started</span>
+            </div>
+
+            <div class="stat-card card">
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <strong>7</strong>
+                <span>Courses completed</span>
+            </div>
+
+            <div class="stat-card card">
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <strong>14</strong>
+                <span>Day learning streak</span>
+            </div>
+
+            <div class="stat-card card">
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <strong>5</strong>
+                <span>Certificates</span>
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title">Recommended for you</h2>
+
+        <div class="course-grid">
+
+            <div class="course-card card">
+
+                <div class="course-image blue-gradient">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+
+                <div class="course-body">
+
+                    <span class="course-level">BEGINNER</span>
+
+                    <h3>JavaScript Fundamentals</h3>
+
+                    <p>
+                        Learn the fundamentals needed to build interactive
+                        web applications.
+                    </p>
+
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 8 hours</span>
+                        <span><i class="fa-solid fa-users"></i> 2.4k learners</span>
+                    </div>
+
+                    <div class="course-progress">
+                        <span style="width:65%"></span>
+                    </div>
+
+                    <button class="outline-btn full-btn"
+                            onclick="startCourse('JavaScript Fundamentals')">
+                        Continue Learning
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card card">
+
+                <div class="course-image purple-gradient">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div class="course-body">
+
+                    <span class="course-level">INTERMEDIATE</span>
+
+                    <h3>AI & Machine Learning</h3>
+
+                    <p>
+                        Understand machine learning concepts and build
+                        your first predictive models.
+                    </p>
+
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 14 hours</span>
+                        <span><i class="fa-solid fa-users"></i> 4.8k learners</span>
+                    </div>
+
+                    <div class="course-progress">
+                        <span style="width:32%"></span>
+                    </div>
+
+                    <button class="outline-btn full-btn"
+                            onclick="startCourse('AI & Machine Learning')">
+                        Continue Learning
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card card">
+
+                <div class="course-image orange-gradient">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div class="course-body">
+
+                    <span class="course-level">BEGINNER</span>
+
+                    <h3>Digital Marketing</h3>
+
+                    <p>
+                        Learn branding, customer behavior, SEO, content
+                        and marketing fundamentals.
+                    </p>
+
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-clock"></i> 10 hours</span>
+                        <span><i class="fa-solid fa-users"></i> 3.1k learners</span>
+                    </div>
+
+                    <div class="course-progress">
+                        <span style="width:80%"></span>
+                    </div>
+
+                    <button class="outline-btn full-btn"
+                            onclick="startCourse('Digital Marketing')">
+                        Continue Learning
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title">Your Career Roadmap</h2>
+
+        <div class="roadmap card">
+
+            <div class="roadmap-line"></div>
+
+            <div class="roadmap-item completed">
+
+                <div class="roadmap-dot">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <span>STEP 01</span>
+                    <h3>Build your foundation</h3>
+                    <p>
+                        Programming, communication and business basics.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap-item completed">
+
+                <div class="roadmap-dot">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <span>STEP 02</span>
+                    <h3>Build real projects</h3>
+                    <p>
+                        Create projects and publish them on GitHub.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap-item current">
+
+                <div class="roadmap-dot">3</div>
+
+                <div>
+                    <span>CURRENT STEP</span>
+                    <h3>Build your professional profile</h3>
+                    <p>
+                        Improve your resume, LinkedIn profile and portfolio.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-dot">4</div>
+
+                <div>
+                    <span>NEXT</span>
+                    <h3>Internship & placement preparation</h3>
+                    <p>
+                        Practice aptitude, interviews and applications.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AI PAGE
+========================= -->
+
+<section id="ai" class="page">
+
+    <div class="ai-page">
+
+        <div class="ai-hero">
+
+            <div class="ai-logo-large">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <span class="eyebrow">AI-POWERED CAREER ASSISTANT</span>
+
+            <h1>
+                Meet your <span>AI Career Guide</span>
+            </h1>
+
+            <p>
+                Get personalized guidance for skills, resumes,
+                interviews, projects, internships and career planning.
+            </p>
+
+        </div>
+
+
+        <div class="ai-layout">
+
+            <!-- AI CHAT -->
+
+            <div class="card chat-card">
+
+                <div class="chat-header">
+
+                    <div class="ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <div>
+                        <strong>My Career AI</strong>
+                        <span>
+                            <i class="fa-solid fa-circle"></i>
+                            Online
+                        </span>
+                    </div>
+
+                    <button onclick="clearChat()">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="chat-messages" id="chatMessages">
+
+                    <div class="message ai-message">
+
+                        <div class="message-avatar">
+                            AI
+                        </div>
+
+                        <div class="message-bubble">
+
+                            <p>
+                                Hi! I'm your AI Career Guide 👋
+                            </p>
+
+                            <p>
+                                I can help you with:
+                            </p>
+
+                            <ul>
+                                <li>Career planning</li>
+                                <li>Resume improvement</li>
+                                <li>Interview preparation</li>
+                                <li>Skill roadmaps</li>
+                                <li>Project ideas</li>
+                                <li>Internship preparation</li>
+                            </ul>
+
+                            <p>
+                                What would you like to work on today?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="suggested-prompts">
+
+                    <button onclick="askAI('Create a career roadmap for me')">
+                        Career roadmap
+                    </button>
+
+                    <button onclick="askAI('How can I improve my resume?')">
+                        Improve my resume
+                    </button>
+
+                    <button onclick="askAI('Give me internship preparation tips')">
+                        Internship preparation
+                    </button>
+
+                    <button onclick="askAI('What skills should I learn?')">
+                        Skills to learn
+                    </button>
+
+                </div>
+
+
+                <div class="chat-input">
+
+                    <input
+                        id="aiInput"
+                        type="text"
+                        placeholder="Ask your career question..."
+                        onkeydown="handleAIKey(event)">
+
+                    <button onclick="sendAIMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                </div>
+
+                <small class="ai-disclaimer">
+                    AI suggestions are for guidance and should be verified
+                    before making important career decisions.
+                </small>
+
+            </div>
+
+
+            <!-- AI TOOLS -->
+
+            <aside>
+
+                <div class="card ai-tools">
+
+                    <h3>Career Tools</h3>
+
+                    <button onclick="showToast('Resume analyzer opened')">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                        Resume Analyzer
+                    </button>
+
+                    <button onclick="showToast('Interview practice started')">
+                        <i class="fa-solid fa-comments"></i>
+                        Mock Interview
+                    </button>
+
+                    <button onclick="showToast('Skill gap analysis started')">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        Skill Gap Analysis
+                    </button>
+
+                    <button onclick="showToast('Career roadmap generated')">
+                        <i class="fa-solid fa-route"></i>
+                        Career Roadmap
+                    </button>
+
+                    <button onclick="showToast('Project ideas generated')">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Project Ideas
+                    </button>
+
+                </div>
+
+
+                <div class="card ai-insight">
+
+                    <div class="insight-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>Today's Career Tip</h3>
+
+                    <p>
+                        Don't try to learn everything at once.
+                        Choose one skill, build one project and
+                        document what you learned.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROFILE PAGE
+========================= -->
+
+<section id="profile" class="page">
+
+    <div class="profile-page">
+
+        <div class="profile-header card">
+
+            <div class="large-cover"></div>
+
+            <div class="profile-header-content">
+
+                <div class="avatar profile-large-avatar">
+                    SB
+                </div>
+
+                <div class="profile-main-info">
+
+                    <h1>Siddhi Bhintade</h1>
+
+                    <h3>
+                        CSBS Student | Digital Marketing | AI & Technology
+                    </h3>
+
+                    <p>
+                        Pune, Maharashtra, India •
+                        <button class="link-button">Contact info</button>
+                    </p>
+
+                    <div class="profile-actions">
+
+                        <button class="primary-btn">
+                            Open to
+                        </button>
+
+                        <button class="outline-btn"
+                                onclick="openEditProfile()">
+                            Edit profile
+                        </button>
+
+                        <button class="outline-btn">
+                            More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-education">
+
+                    <strong>RSCOE / JSPM</strong>
+                    <span>Computer Science & Business Systems</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-columns">
+
+            <div>
+
+                <div class="card profile-section">
+
+                    <div class="section-header">
+
+                        <h2>About</h2>
+
+                        <button onclick="openEditProfile()">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                    </div>
+
+                    <p>
+                        Computer Science & Business Systems student interested
+                        in technology, AI, business, digital marketing and
+                        building practical solutions.
+                    </p>
+
+                    <p>
+                        Currently developing technical skills while exploring
+                        career opportunities, internships and entrepreneurial
+                        ideas.
+                    </p>
+
+                </div>
+
+
+                <div class="card profile-section">
+
+                    <div class="section-header">
+                        <h2>Skills</h2>
+                        <button>
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
+
+                    <div class="profile-skills">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>DBMS</span>
+                        <span>AI</span>
+                        <span>Digital Marketing</span>
+                        <span>Communication</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card profile-section">
+
+                    <div class="section-header">
+
+                        <h2>Experience</h2>
+
+                        <button>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="experience">
+
+                        <div class="experience-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>Digital Marketing Intern</h3>
+
+                            <strong>Marketing Internship</strong>
+
+                            <small>
+                                Internship • 2026
+                            </small>
+
+                            <p>
+                                Worked on social media marketing, content
+                                creation, SEO basics, market research
+                                and campaign planning.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card profile-section">
+
+                    <div class="section-header">
+
+                        <h2>Projects</h2>
+
+                        <button>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="project-item">
+
+                        <div class="project-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>AI Vulnerability Management</h3>
+
+                            <p>
+                                AI-based contextual vulnerability reporting
+                                and resource-aware remediation planning.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>AI</span>
+                                <span>Cybersecurity</span>
+                                <span>XAI</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-item">
+
+                        <div class="project-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>My Career</h3>
+
+                            <p>
+                                Career networking and professional development
+                                platform with AI career guidance.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="card profile-side">
+
+                    <h3>Career Goals</h3>
+
+                    <div class="goal">
+
+                        <div class="goal-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div>
+                            <strong>Technical Skills</strong>
+                            <span>75%</span>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <span style="width:75%"></span>
+                    </div>
+
+
+                    <div class="goal">
+
+                        <div class="goal-icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+
+                        <div>
+                            <strong>Communication</strong>
+                            <span>68%</span>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <span style="width:68%"></span>
+                    </div>
+
+
+                    <div class="goal">
+
+                        <div class="goal-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <div>
+                            <strong>Career Readiness</strong>
+                            <span>72%</span>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <span style="width:72%"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="card profile-side">
+
+                    <h3>Profile Visibility</h3>
+
+                    <p>
+                        Your profile is visible to recruiters and
+                        professional connections.
+                    </p>
+
+                    <label class="toggle">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                    <strong>Open to opportunities</strong>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESUME PAGE
+========================= -->
+
+<section id="resume" class="page">
+
+    <div class="page-container">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="eyebrow">CAREER DOCUMENTS</span>
+                <h1>Resume Builder</h1>
+                <p>Create and manage your professional resume.</p>
+            </div>
+
+            <button class="primary-btn"
+                    onclick="downloadResume()">
+                <i class="fa-solid fa-download"></i>
+                Download Resume
+            </button>
+
+        </div>
+
+
+        <div class="resume-layout">
+
+            <div class="card resume-form">
+
+                <h2>Resume Information</h2>
+
+                <label>Full Name</label>
+                <input id="resumeName" value="Siddhi Bhintade">
+
+                <label>Professional Headline</label>
+                <input
+                    id="resumeHeadline"
+                    value="CSBS Student | AI | Technology | Digital Marketing">
+
+                <label>About</label>
+                <textarea id="resumeAbout">Computer Science & Business Systems student interested in technology, AI, business and digital marketing.</textarea>
+
+                <label>Skills</label>
+                <input
+                    id="resumeSkills"
+                    value="HTML, CSS, JavaScript, Python, SQL, AI, Digital Marketing">
+
+                <label>Experience</label>
+                <textarea id="resumeExperience">Digital Marketing Intern - Social media marketing, content creation, SEO basics and market research.</textarea>
+
+                <button class="primary-btn full-btn"
+                        onclick="updateResumePreview()">
+                    Update Resume
+                </button>
+
+            </div>
+
+
+            <div class="resume-preview-wrapper">
+
+                <div class="resume-paper" id="resumePreview">
+
+                    <div class="resume-top">
+
+                        <h1>Siddhi Bhintade</h1>
+
+                        <p>
+                            CSBS Student | AI | Technology | Digital Marketing
+                        </p>
+
+                        <span>
+                            Pune, Maharashtra, India
+                        </span>
+
+                    </div>
+
+                    <div class="resume-section">
+
+                        <h3>PROFILE</h3>
+
+                        <p id="previewAbout">
+                            Computer Science & Business Systems student
+                            interested in technology, AI, business and
+                            digital marketing.
+                        </p>
+
+                    </div>
+
+                    <div class="resume-section">
+
+                        <h3>SKILLS</h3>
+
+                        <p id="previewSkills">
+                            HTML, CSS, JavaScript, Python, SQL, AI,
+                            Digital Marketing
+                        </p>
+
+                    </div>
+
+                    <div class="resume-section">
+
+                        <h3>EXPERIENCE</h3>
+
+                        <p id="previewExperience">
+                            Digital Marketing Intern - Social media marketing,
+                            content creation, SEO basics and market research.
+                        </p>
+
+                    </div>
+
+                    <div class="resume-section">
+
+                        <h3>EDUCATION</h3>
+
+                        <strong>
+                            Computer Science & Business Systems
+                        </strong>
+
+                        <p>
+                            RSCOE / JSPM
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
+
+<section id="admin" class="page">
+
+    <div class="admin-page">
+
+        <div class="admin-header">
+
+            <div>
+
+                <span class="eyebrow">ADMIN CONTROL CENTER</span>
+
+                <h1>My Career Admin</h1>
+
+                <p>
+                    Manage users, jobs, content and platform activity.
+                </p>
+
+            </div>
+
+            <div class="admin-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Administrator
+            </div>
+
+        </div>
+
+
+        <div class="admin-stats">
+
+            <div class="admin-stat card">
+
+                <div class="admin-stat-icon blue">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <span>Total Users</span>
+                    <strong id="adminUsers">2,486</strong>
+                    <small>+12.4% this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat card">
+
+                <div class="admin-stat-icon green">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div>
+                    <span>Active Jobs</span>
+                    <strong id="adminJobs">348</strong>
+                    <small>+28 this week</small>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat card">
+
+                <div class="admin-stat-icon purple">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div>
+                    <span>Applications</span>
+                    <strong>8,421</strong>
+                    <small>+8.6% this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="admin-stat card">
+
+                <div class="admin-stat-icon orange">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                    <span>Engagement</span>
+                    <strong>74.8%</strong>
+                    <small>+4.2% this month</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-layout">
+
+            <div class="card admin-main">
+
+                <div class="admin-tabs">
+
+                    <button class="active"
+                            onclick="adminTab('overview', this)">
+                        Overview
+                    </button>
+
+                    <button onclick="adminTab('users', this)">
+                        Users
+                    </button>
+
+                    <button onclick="adminTab('jobs', this)">
+                        Jobs
+                    </button>
+
+                    <button onclick="adminTab('reports', this)">
+                        Reports
+                    </button>
+
+                </div>
+
+
+                <div id="adminOverview" class="admin-content">
+
+                    <h2>Platform Overview</h2>
+
+                    <div class="chart">
+
+                        <div class="chart-bars">
+
+                            <div style="height:45%">
+                                <span>Mon</span>
+                            </div>
+
+                            <div style="height:62%">
+                                <span>Tue</span>
+                            </div>
+
+                            <div style="height:52%">
+                                <span>Wed</span>
+                            </div>
+
+                            <div style="height:75%">
+                                <span>Thu</span>
+                            </div>
+
+                            <div style="height:68%">
+                                <span>Fri</span>
+                            </div>
+
+                            <div style="height:88%">
+                                <span>Sat</span>
+                            </div>
+
+                            <div style="height:94%">
+                                <span>Sun</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <h3>Recent Activity</h3>
+
+                    <div class="activity-row">
+                        <span class="activity-dot green-dot"></span>
+                        <div>
+                            <strong>New company registered</strong>
+                            <small>TechNova Solutions • 8 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity-row">
+                        <span class="activity-dot blue-dot"></span>
+                        <div>
+                            <strong>New job posted</strong>
+                            <small>Frontend Developer Intern • 22 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity-row">
+                        <span class="activity-dot purple-dot"></span>
+                        <div>
+                            <strong>1,000th profile completed</strong>
+                            <small>Platform milestone • 1 hour ago</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="adminUsersPanel"
+                     class="admin-content hidden">
+
+                    <h2>User Management</h2>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Siddhi Bhintade</td>
+                                    <td>Student</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <button class="table-btn"
+                                                onclick="showToast('User details opened')">
+                                            View
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Priya Sharma</td>
+                                    <td>Professional</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <button class="table-btn">
+                                            View
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>TechNova Solutions</td>
+                                    <td>Recruiter</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <button class="table-btn">
+                                            View
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div id="adminJobsPanel"
+                     class="admin-content hidden">
+
+                    <h2>Job Management</h2>
+
+                    <button class="primary-btn"
+                            onclick="openJobModal()">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Job
+                    </button>
+
+                    <div id="adminJobList">
+
+                        <div class="admin-job">
+                            <div class="company-logo">T</div>
+                            <div>
+                                <strong>Frontend Developer Intern</strong>
+                                <small>TechNova Solutions • Pune</small>
+                            </div>
+                            <button onclick="showToast('Job removed')">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+
+                        <div class="admin-job">
+                            <div class="company-logo purple-logo">D</div>
+                            <div>
+                                <strong>Data Analyst Intern</strong>
+                                <small>DataSphere • Remote</small>
+                            </div>
+                            <button onclick="showToast('Job removed')">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="adminReportsPanel"
+                     class="admin-content hidden">
+
+                    <h2>Reports & Moderation</h2>
+
+                    <div class="report-card">
+                        <div>
+                            <strong>Reported content</strong>
+                            <small>3 items require review</small>
+                        </div>
+                        <button class="outline-btn"
+                                onclick="showToast('Reports opened')">
+                            Review
+                        </button>
+                    </div>
+
+                    <div class="report-card">
+                        <div>
+                            <strong>Spam accounts</strong>
+                            <small>7 accounts flagged</small>
+                        </div>
+                        <button class="outline-btn"
+                                onclick="showToast('Accounts opened')">
+                            Review
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <aside>
+
+                <div class="card admin-actions">
+
+                    <h3>Quick Actions</h3>
+
+                    <button onclick="openJobModal()">
+                        <i class="fa-solid fa-plus"></i>
+                        Create Job
+                    </button>
+
+                    <button onclick="showToast('Announcement editor opened')">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcement
+                    </button>
+
+                    <button onclick="showToast('Analytics opened')">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Analytics
+                    </button>
+
+                    <button onclick="showToast('Settings opened')">
+                        <i class="fa-solid fa-gear"></i>
+                        Platform Settings
+                    </button>
+
+                </div>
+
+
+                <div class="card system-status">
+
+                    <h3>System Status</h3>
+
+                    <div>
+                        <span class="online-dot"></span>
+                        Platform
+                        <strong>Operational</strong>
+                    </div>
+
+                    <div>
+                        <span class="online-dot"></span>
+                        AI Guide
+                        <strong>Operational</strong>
+                    </div>
+
+                    <div>
+                        <span class="online-dot"></span>
+                        Database
+                        <strong>Operational</strong>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-brand">
+
+        <div class="brand-logo">MC</div>
+
+        <div>
+            <strong>My Career</strong>
+            <span>Build • Connect • Grow</span>
+        </div>
+
+    </div>
+
+    <div class="footer-links">
+
+        <button onclick="showToast('About My Career')">About</button>
+        <button onclick="showToast('Privacy Policy')">Privacy</button>
+        <button onclick="showToast('Terms of Service')">Terms</button>
+        <button onclick="showToast('Help Center')">Help</button>
+
+    </div>
+
+    <p>
+        © 2026 My Career • Founded by Siddhi Bhintade
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     POST MODAL
+========================= -->
+
+<div class="modal-overlay" id="postModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2>Create a post</h2>
+
+            <button onclick="closeModal('postModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="create-row">
+
+                <div class="avatar">SB</div>
+
+                <strong>Siddhi Bhintade</strong>
+
+            </div>
+
+            <textarea
+                id="postText"
+                placeholder="What do you want to share with your network?"></textarea>
+
+            <div class="modal-tools">
+
+                <button>
+                    <i class="fa-solid fa-image"></i>
+                    Photo
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-video"></i>
+                    Video
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-face-smile"></i>
+                    Feeling
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button class="outline-btn"
+                    onclick="closeModal('postModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="createPost()">
+                Post
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     EDIT PROFILE MODAL
+========================= -->
+
+<div class="modal-overlay" id="profileModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2>Edit Profile</h2>
+
+            <button onclick="closeModal('profileModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <label>Name</label>
+            <input id="editName" value="Siddhi Bhintade">
+
+            <label>Headline</label>
+            <input
+                id="editHeadline"
+                value="CSBS Student | Digital Marketing | AI & Technology">
+
+            <label>Location</label>
+            <input
+                id="editLocation"
+                value="Pune, Maharashtra, India">
+
+            <label>About</label>
+            <textarea id="editAbout">Computer Science & Business Systems student interested in technology, AI, business and digital marketing.</textarea>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button class="outline-btn"
+                    onclick="closeModal('profileModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="saveProfile()">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JOB MODAL
+========================= -->
+
+<div class="modal-overlay" id="jobModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2>Create Job</h2>
+
+            <button onclick="closeModal('jobModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <label>Job Title</label>
+            <input id="newJobTitle"
+                   placeholder="e.g. Software Developer Intern">
+
+            <label>Company</label>
+            <input id="newJobCompany"
+                   placeholder="Company name">
+
+            <label>Location</label>
+            <input id="newJobLocation"
+                   placeholder="Pune / Remote">
+
+            <label>Job Type</label>
+
+            <select id="newJobType">
+
+                <option>Internship</option>
+                <option>Full Time</option>
+                <option>Part Time</option>
+
+            </select>
+
+            <label>Description</label>
+
+            <textarea
+                id="newJobDescription"
+                placeholder="Job description"></textarea>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button class="outline-btn"
+                    onclick="closeModal('jobModal')">
+                Cancel
+            </button>
+
+            <button class="primary-btn"
+                    onclick="createJob()">
+                Publish Job
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast" id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Done!
+    </span>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
